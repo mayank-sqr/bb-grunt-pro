@@ -33,6 +33,7 @@ module.exports = function(grunt) {
           'assets/js/bootstrap.js',
           'assets/js/underscore-mixins.js',
           'assets/js/handlebars.js',
+          'assets/js/template.js',
         ]
       },
 

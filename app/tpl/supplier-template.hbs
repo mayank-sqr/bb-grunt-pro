@@ -1,0 +1,44 @@
+<div class="span6" id="add-handlebars-template">
+  <table class="table table-bordered table-condensed pre-scrollable" id="set-markup-add">
+    <caption>
+      <div class="add-button">
+        <a class="btn btn-primary" href="javascript:void(0)">ADD</a>
+      </div>
+    </caption>
+    <thead>
+      <tr>
+        <th><input type='checkbox'> OPT ID</th>
+        <th>COMPANY</th>
+        <th>DIAMONDS</th>
+      </tr>
+    </thead>
+    <tbody id="addbtn">
+      {{#each this}}
+      <tr>
+        <td><input type='checkbox'>{{id}}</td>
+        <td>{{company}}</td>
+        <td>{{diamonds}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+<!-- /span6 -->
+<div class="span6">
+  <table class="table table-bordered table-condensed pre-scrollable" id="set-markup-remove">
+    <caption>
+      <div class="remove-button">
+        <a class="btn btn-primary" href="javascript:void(0)">REMOVE X</a>
+      </div>
+    </caption>
+    <thead>
+      <tr>
+        <th><input type='checkbox'> OPT ID</th>
+        <th>COMPANY</th>
+        <th>DIAMONDS</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+<!-- /span6 -->

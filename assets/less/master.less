@@ -2,6 +2,37 @@
 	Newly created sample file
 */
 
+@tablet:    ~"only screen and (min-width: 768px) and (max-width: 991px)";
+@mobile:    ~"only screen and (min-width: 320px) and (max-width: 767px)";
+@ipad-landscape: ~"only screen and (min-width: 768px) and (max-width: 840px)";
+@extrasmalldevice:    ~"only screen and (min-width: 320px) and (max-width: 480px)";
+
+@font-face {
+  font-family: 'TradeGothicLTStd-Bold';
+  src: url('fonts/TradeGothicLTStd-Bold.woff') format('woff'),
+       url('fonts/TradeGothicLTStd-Bold.ttf') format('truetype'),
+       url('fonts/TradeGothicLTStd-Bold.svg#TradeGothicLTStd-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'TradeGothicLTStd';
+  src: url('fonts/TradeGothicLTStd.eot');
+  src: url('fonts/TradeGothicLTStd.woff2') format('woff2'),
+       url('fonts/TradeGothicLTStd.woff') format('woff'),
+       url('fonts/TradeGothicLTStd.ttf') format('truetype'),
+       url('fonts/TradeGothicLTStd.svg#TradeGothicLTStd') format('svg'),
+       url('fonts/TradeGothicLTStd.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family: 'TradeGothicLTStd';
+}
+
 .parent-div{
 	padding-top:41px;
 }
@@ -29,17 +60,23 @@ h6{
     color: #fff;
     text-transform: uppercase;
     border-radius: 0;
+    line-height: 26px;
+    height: 20px;
 	}
 
 	a{
 		border:0;
 		color: #194d78;
 		text-transform:uppercase;
+    line-height: 26px;
+    height: 20px;
 
 	&:hover{
 		border-color: initial;
     border: 0;
     background: transparent;
+    line-height: 26px;
+    height: 20px;
 	}
 }
 
@@ -52,29 +89,87 @@ table thead{
   
   th{
     color:#194d78;
+    font-family: 'TradeGothicLTStd-Bold';
+  }
+}
+
+#set-markup-add,
+#set-markup-remove{
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  thead tr {
+    display: block;
+    position: relative;
+  }
+
+  tr td input[type="checkbox"],
+  tr th input[type="checkbox"]{
+    margin: 0 5px 0 0;
+  }
+
+  th, td{
+    padding: 5px;
+    text-align: left;
+    min-width: 140px;
+  }
+
+  tbody {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 186px;
+  overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 
 #price-markup-range,
 #carat-markup-range{
+  display: inline-block;
 
-thead{
-  background: transparent;
-  
-  th{
-    color:initial;
+  .price-range-group,
+  .carat-range-group{
+    float: left;
+    margin: 0 10px 0 0;
+
+    .finput,
+    .finputCarat{
+      float: left;
+    }
+    .sinput,
+    .sinputCarat{
+      float: left;
+    }
+    .heading h5{
+      font-family: 'TradeGothicLTStd-Bold';
+    }
   }
+
+  .mark-up-group,
+  .carat-mark-up-group{
+    float: left;
+    margin: 0 0 0 10px;
+
+    .tinput,
+    .tinputCarat{
+      float: left;
+    }
+    .foinput,
+    .foinputCarat{
+      float: left;
+    }
+    .heading h5{
+      font-family: 'TradeGothicLTStd-Bold';
+    }
+
+    .add-btn{
+      float: left;
+    }
+  }
+
 }
 
-tbody{
-  border-bottom: 1px solid #e0e0e0;
-}
-
-td{
-  border-top:0;
-}
-
-}
 
 .tab-one-content{
 	text-align: center;
@@ -100,12 +195,24 @@ td{
 
   .add-button a,
   .remove-button a,
-  #price-markup-range td a,
-  #carat-markup-range td a,
+  #price-markup-range .add-btn a,
+  #carat-markup-range add-btn a,
   .save-publish-btn a{
     	background: #194d78;
 	    border-radius: 0;
 	    border: 0;
+      line-height: 25px;
+      height: 20px;
+      padding: 5px 20px;
+      float: right;
+
+    &:hover{
+      background: #194d78;
+      line-height: 25px;
+      height: 20px;
+      padding: 5px 20px;
+      float: right;
+    }
     }
 
 .divider{
@@ -178,7 +285,7 @@ span.symbol {
     font-size: 12px;
     position: relative;
     top: -4px;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 .question-mark{
       background: #e0e0e0;
@@ -186,6 +293,7 @@ span.symbol {
     padding: 1px 5px;
     width: 10px;
     height: 10px;
+    cursor: pointer;
 }
 #step-two-parent{
   position: relative;
@@ -206,7 +314,8 @@ span.symbol {
   margin: 25px 0;
 }
 
-#myModal{
+#myModal,
+#deleteMarkup{
   max-width: 400px;
   border-radius: 0;
 
@@ -239,6 +348,49 @@ span.symbol {
   }
 }
 
+
+@media @tablet{
+  .container{
+    width:100%;
+  }
+
+}
+
+@media @ipad-landscape{
+  #set-markup-add th, 
+  #set-markup-remove th, 
+  #set-markup-add td, 
+  #set-markup-remove td {
+    min-width: 100px;
+}
+}
+
+@media @mobile{
+  .container{
+    width:100%;
+  }
+
+  #addRemoveSection .span6{
+  width: 100%;
+}
+
+#step-two-parent .span6{
+  width:100%;
+}
+#step-two-parent > [class*='span6']:before {
+    content: " ";
+    display: none;
+
+}
+
+}
+
+@media @extrasmalldevice{
+  table th{
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
 
 
 

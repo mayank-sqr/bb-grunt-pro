@@ -1,6 +1,22 @@
 /*
 	Newly created sample file
 */
+@font-face {
+  font-family: 'TradeGothicLTStd-Bold';
+  src: url('fonts/TradeGothicLTStd-Bold.woff') format('woff'), url('fonts/TradeGothicLTStd-Bold.ttf') format('truetype'), url('fonts/TradeGothicLTStd-Bold.svg#TradeGothicLTStd-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TradeGothicLTStd';
+  src: url('fonts/TradeGothicLTStd.eot');
+  src: url('fonts/TradeGothicLTStd.woff2') format('woff2'), url('fonts/TradeGothicLTStd.woff') format('woff'), url('fonts/TradeGothicLTStd.ttf') format('truetype'), url('fonts/TradeGothicLTStd.svg#TradeGothicLTStd') format('svg'), url('fonts/TradeGothicLTStd.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'TradeGothicLTStd';
+}
 .parent-div {
   padding-top: 41px;
 }
@@ -25,38 +41,138 @@ h6 {
   color: #fff;
   text-transform: uppercase;
   border-radius: 0;
+  line-height: 26px;
+  height: 20px;
 }
 .tab-container .nav-tabs li a {
   border: 0;
   color: #194d78;
   text-transform: uppercase;
+  line-height: 26px;
+  height: 20px;
 }
 .tab-container .nav-tabs li a:hover {
   border-color: initial;
   border: 0;
   background: transparent;
+  line-height: 26px;
+  height: 20px;
 }
 table thead {
   background: #ebebeb;
 }
 table thead th {
   color: #194d78;
+  font-family: 'TradeGothicLTStd-Bold';
 }
-#price-markup-range thead,
-#carat-markup-range thead {
-  background: transparent;
+#set-markup-add,
+#set-markup-remove {
+  table-layout: fixed;
+  border-collapse: collapse;
 }
-#price-markup-range thead th,
-#carat-markup-range thead th {
-  color: initial;
+#set-markup-add thead tr,
+#set-markup-remove thead tr {
+  display: block;
+  position: relative;
 }
-#price-markup-range tbody,
-#carat-markup-range tbody {
-  border-bottom: 1px solid #e0e0e0;
+#set-markup-add tr td input[type="checkbox"],
+#set-markup-remove tr td input[type="checkbox"],
+#set-markup-add tr th input[type="checkbox"],
+#set-markup-remove tr th input[type="checkbox"] {
+  margin: 0 5px 0 0;
 }
-#price-markup-range td,
-#carat-markup-range td {
-  border-top: 0;
+#set-markup-add th,
+#set-markup-remove th,
+#set-markup-add td,
+#set-markup-remove td {
+  padding: 5px;
+  text-align: left;
+  min-width: 140px;
+}
+#set-markup-add tbody,
+#set-markup-remove tbody {
+  display: block;
+  overflow: auto;
+  width: 100%;
+  height: 186px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#price-markup-range,
+#carat-markup-range {
+  display: inline-block;
+}
+#price-markup-range .price-range-group,
+#carat-markup-range .price-range-group,
+#price-markup-range .carat-range-group,
+#carat-markup-range .carat-range-group {
+  float: left;
+  margin: 0 10px 0 0;
+}
+#price-markup-range .price-range-group .finput,
+#carat-markup-range .price-range-group .finput,
+#price-markup-range .carat-range-group .finput,
+#carat-markup-range .carat-range-group .finput,
+#price-markup-range .price-range-group .finputCarat,
+#carat-markup-range .price-range-group .finputCarat,
+#price-markup-range .carat-range-group .finputCarat,
+#carat-markup-range .carat-range-group .finputCarat {
+  float: left;
+}
+#price-markup-range .price-range-group .sinput,
+#carat-markup-range .price-range-group .sinput,
+#price-markup-range .carat-range-group .sinput,
+#carat-markup-range .carat-range-group .sinput,
+#price-markup-range .price-range-group .sinputCarat,
+#carat-markup-range .price-range-group .sinputCarat,
+#price-markup-range .carat-range-group .sinputCarat,
+#carat-markup-range .carat-range-group .sinputCarat {
+  float: left;
+}
+#price-markup-range .price-range-group .heading h5,
+#carat-markup-range .price-range-group .heading h5,
+#price-markup-range .carat-range-group .heading h5,
+#carat-markup-range .carat-range-group .heading h5 {
+  font-family: 'TradeGothicLTStd-Bold';
+}
+#price-markup-range .mark-up-group,
+#carat-markup-range .mark-up-group,
+#price-markup-range .carat-mark-up-group,
+#carat-markup-range .carat-mark-up-group {
+  float: left;
+  margin: 0 0 0 10px;
+}
+#price-markup-range .mark-up-group .tinput,
+#carat-markup-range .mark-up-group .tinput,
+#price-markup-range .carat-mark-up-group .tinput,
+#carat-markup-range .carat-mark-up-group .tinput,
+#price-markup-range .mark-up-group .tinputCarat,
+#carat-markup-range .mark-up-group .tinputCarat,
+#price-markup-range .carat-mark-up-group .tinputCarat,
+#carat-markup-range .carat-mark-up-group .tinputCarat {
+  float: left;
+}
+#price-markup-range .mark-up-group .foinput,
+#carat-markup-range .mark-up-group .foinput,
+#price-markup-range .carat-mark-up-group .foinput,
+#carat-markup-range .carat-mark-up-group .foinput,
+#price-markup-range .mark-up-group .foinputCarat,
+#carat-markup-range .mark-up-group .foinputCarat,
+#price-markup-range .carat-mark-up-group .foinputCarat,
+#carat-markup-range .carat-mark-up-group .foinputCarat {
+  float: left;
+}
+#price-markup-range .mark-up-group .heading h5,
+#carat-markup-range .mark-up-group .heading h5,
+#price-markup-range .carat-mark-up-group .heading h5,
+#carat-markup-range .carat-mark-up-group .heading h5 {
+  font-family: 'TradeGothicLTStd-Bold';
+}
+#price-markup-range .mark-up-group .add-btn,
+#carat-markup-range .mark-up-group .add-btn,
+#price-markup-range .carat-mark-up-group .add-btn,
+#carat-markup-range .carat-mark-up-group .add-btn {
+  float: left;
 }
 .tab-one-content {
   text-align: center;
@@ -78,12 +194,27 @@ table thead th {
 }
 .add-button a,
 .remove-button a,
-#price-markup-range td a,
-#carat-markup-range td a,
+#price-markup-range .add-btn a,
+#carat-markup-range add-btn a,
 .save-publish-btn a {
   background: #194d78;
   border-radius: 0;
   border: 0;
+  line-height: 25px;
+  height: 20px;
+  padding: 5px 20px;
+  float: right;
+}
+.add-button a:hover,
+.remove-button a:hover,
+#price-markup-range .add-btn a:hover,
+#carat-markup-range add-btn a:hover,
+.save-publish-btn a:hover {
+  background: #194d78;
+  line-height: 25px;
+  height: 20px;
+  padding: 5px 20px;
+  float: right;
 }
 .divider {
   border: 1px solid #6f8693;
@@ -146,7 +277,7 @@ span.symbol {
   font-size: 12px;
   position: relative;
   top: -4px;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 .question-mark {
   background: #e0e0e0;
@@ -154,6 +285,7 @@ span.symbol {
   padding: 1px 5px;
   width: 10px;
   height: 10px;
+  cursor: pointer;
 }
 #step-two-parent {
   position: relative;
@@ -173,24 +305,29 @@ span.symbol {
 #view-current-markups {
   margin: 25px 0;
 }
-#myModal {
+#myModal,
+#deleteMarkup {
   max-width: 400px;
   border-radius: 0;
 }
-#myModal .modal-body {
+#myModal .modal-body,
+#deleteMarkup .modal-body {
   text-align: center;
 }
-#myModal .modal-body h3 {
+#myModal .modal-body h3,
+#deleteMarkup .modal-body h3 {
   color: #194d78;
   text-transform: uppercase;
   line-height: 25px;
 }
-#myModal .modal-body p {
+#myModal .modal-body p,
+#deleteMarkup .modal-body p {
   color: #858585;
   font-size: 16px;
   padding: 0 45px;
 }
-#myModal .modal-body .modal-buttons button {
+#myModal .modal-body .modal-buttons button,
+#deleteMarkup .modal-body .modal-buttons button {
   background: #194d78;
   border-radius: 0;
   border: 0;
@@ -198,4 +335,38 @@ span.symbol {
   width: 100%;
   margin: 15px;
   padding: 10px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 840px) {
+  #set-markup-add th,
+  #set-markup-remove th,
+  #set-markup-add td,
+  #set-markup-remove td {
+    min-width: 100px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+  #addRemoveSection .span6 {
+    width: 100%;
+  }
+  #step-two-parent .span6 {
+    width: 100%;
+  }
+  #step-two-parent > [class*='span6']:before {
+    content: " ";
+    display: none;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  table th {
+    font-size: 12px;
+    line-height: 12px;
+  }
 }

@@ -1,0 +1,118 @@
+<div id="step-two-radio-btns">
+  <div class="radio-item radio inline">
+    <input type="radio" id="price-range" name="ritem" value="price" checked="checked">
+    <label for="price-range">PRICE</label>
+  </div>
+  <div class="radio-item radio inline">
+    <input type="radio" id="carat-range" name="ritem" value="carat">
+    <label for="carat-range">CARAT</label>
+  </div>
+</div>
+
+<div id="price-markup-range">
+
+<div class="price-range-group">
+  <div class="heading">
+  <h5>Price range</h5>
+  </div>
+  <div class="field-group">
+    <div class="finput">
+      <span class="symbol">$</span>
+      <input type="text" class="input-mini" name="">
+       <span class="symbol">-</span>
+    </div>
+    <div class="sinput">
+      <span class="symbol">$</span>
+      <input type="text" class="input-mini" name="">
+    </div>
+  </div>
+
+</div>
+
+<div class="mark-up-group">
+
+  <div class="heading">
+  <h5>Mark up</h5>
+  </div>
+  <div class="field-group">
+    <div class="tinput">
+      <input type="text" class="input-mini" name="">
+        <span class="symbol">%</span>
+        <span class="symbol">+</span>
+    </div>
+    <div class="foinput">
+      <span class="symbol">$</span>
+        <input type="text" class="input-mini" name="">
+        <span title="Reset Pricing" class="symbol question-mark" data-placement='top'>?</span>
+    </div>
+
+    <div class="add-btn"><a id="price-add-btn" class="btn btn-primary" href="javascript:void(0)">ADD</a></div>
+  </div>
+  
+
+</div>
+</div>
+
+
+<!-- Carat DIVS STARTS-->
+
+<div id="carat-markup-range" style="display: none;">
+
+<div class="carat-range-group">
+  <div class="heading">
+  <h5>Carat range</h5>
+  </div>
+  <div class="field-group">
+    <div class="finputCarat">
+      <input type="text" class="input-mini" name="">
+        <span class="symbol">ct</span>
+    </div>
+    <div class="sinputCarat">
+      <span class="symbol">-</span>
+        <input type="text" class="input-mini" name="">
+        <span class="symbol">ct</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="carat-mark-up-group">
+
+  <div class="heading">
+  <h5>Mark up</h5>
+  </div>
+  <div class="field-group">
+    <div class="tinputCarat">
+      <input type="text" class="input-mini" name="">
+        <span class="symbol">%</span>
+        <span class="symbol">+</span>
+    </div>
+    <div class="foinputCarat">
+      <span class="symbol">$</span>
+        <input type="text" class="input-mini" name="">
+        <span title="Reset Pricing" class="symbol question-mark" data-placement='top'>?</span>
+    </div>
+
+    <div class="add-btn"><a id="carat-add-btn" class="btn btn-primary" href="javascript:void(0)">ADD</a></div>
+  </div>
+  
+
+</div>
+</div>
+
+<table class="table table-bordered table-condensed" id="added-markups">
+  <caption>
+    <h4>Mark up Added</h4>
+  </caption>
+  <thead>
+    <tr>
+      <th>PRICE/CT FROM</th>
+      <th>PRICE/CT TO</th>
+      <th>% MARK UP</th>
+      <th>$ MARK UP</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>

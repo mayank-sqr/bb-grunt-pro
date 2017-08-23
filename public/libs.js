@@ -1,4 +1,4 @@
-/* Compiled file! lds-admin-markup - v6.0.0 - 2017-08-17 *//*!
+/* Compiled file! lds-admin-markup - v6.0.0 - 2017-08-22 *//*!
  * jQuery JavaScript Library v1.8.2
  * http://jquery.com/
  *
@@ -19336,3 +19336,22 @@ Handlebars.VM = {
 
 Handlebars.template = Handlebars.VM.template;
 ;
+
+Handlebars.getTemplate = function(name) {
+    //console.log("templates function working");
+    if (Handlebars.templates === undefined || Handlebars.templates[name] === undefined) {
+        //console.log("template undefined");
+        $.ajax({
+            url: 'app/tpl/' + name + '.hbs',
+            success: function(data) {
+               // console.log("success compiling template");
+                if (Handlebars.templates === undefined) {
+                    Handlebars.templates = {};
+                }
+                Handlebars.templates[name] = Handlebars.compile(data);
+            },
+            async: false
+        });
+    }
+    return Handlebars.templates[name];
+};
