@@ -195,7 +195,7 @@ table thead th {
 .add-button a,
 .remove-button a,
 #price-markup-range .add-btn a,
-#carat-markup-range add-btn a,
+#carat-markup-range .add-btn a,
 .save-publish-btn a {
   background: #194d78;
   border-radius: 0;
@@ -208,7 +208,7 @@ table thead th {
 .add-button a:hover,
 .remove-button a:hover,
 #price-markup-range .add-btn a:hover,
-#carat-markup-range add-btn a:hover,
+#carat-markup-range .add-btn a:hover,
 .save-publish-btn a:hover {
   background: #194d78;
   line-height: 25px;
@@ -269,7 +269,7 @@ table thead th {
 }
 .save-publish-btn a {
   text-transform: uppercase;
-  padding: 5px 25px;
+  padding: 5px 20px;
   font-size: 12px;
 }
 span.symbol {
@@ -339,14 +339,6 @@ span.symbol {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .container {
     width: 100%;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 840px) {
-  #set-markup-add th,
-  #set-markup-remove th,
-  #set-markup-add td,
-  #set-markup-remove td {
-    min-width: 100px;
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {

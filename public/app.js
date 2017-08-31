@@ -1,10 +1,8 @@
-/* Compiled file! lds-admin-markup - v6.0.0 - 2017-08-22 */var CurrentMarkup = Backbone.Model.extend({
+/* Compiled file! lds-admin-markup - v6.0.0 - 2017-08-29 */var CurrentMarkup = Backbone.Model.extend({
 
 });
 var SetMarkup = Backbone.Model.extend({
-	validate: function(attrs, options){
-		console.log(attrs);	
-	}
+	
 });
 var SetSupplier = Backbone.Model.extend({
 
@@ -35,6 +33,42 @@ var CurrentMarkupView = Backbone.View.extend({
 
   initialize: function() {
 
+  },
+
+  /**
+   * [events description]
+   * @type {Object}
+   */
+  events: {
+    "click .delete": "deleteMarkup"
+  },
+
+  /**
+   * [deleteMarkup description]
+   * @param  {[type]} e [description]
+   * @return {[type]}   [description]
+   */
+  deleteMarkup: function(e) {
+
+    var deleteMarkup = $(e.currentTarget);
+
+    $('#deleteMarkup').modal({
+      show: true
+    });
+
+    $(".leave-btn").click(function() {
+      $('#deleteMarkup').modal('hide');
+    });
+
+    $(".delete-markup").click(function() {
+      var $target = $('.checkme input[type=checkbox]:checked');
+      if ($target.length) {
+        deleteMarkup.closest('tr').remove();
+        $('#deleteMarkup').modal('hide');
+      } else {
+        console.log('Please select checkbox first to remove row');
+      }
+    });
   },
 
   render: function() {
@@ -81,20 +115,22 @@ var SetMarkupView = Backbone.View.extend({
     /**
      * Storing input values in form of table
      */
+    if (pcRangeInputValues.$pcFirstInput != ' ' && pcRangeInputValues.$pcSecondInput != ' ' && pcRangeInputValues.$pcThirdInput != ' ' && pcRangeInputValues.$pcFourthInput != ' ') {
+      var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
+      var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
 
-    var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
-    var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
+      var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
+      //$checkedRows.appendTo('tbody');
 
-    var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
-    //$checkedRows.appendTo('tbody');
+      /**
+       * After adding a Markups to table blank input fields.
+       */
+      $('.markup-table input').val(' ');
 
-    /**
-     * After adding a Markups to table blank input fields.
-     */
-    $('.markup-table tr input').val(' ');
-
-    return false;
-
+      return false;
+    } else {
+      console.log('Fill all Input Fields');
+    }
   },
 
   markupbyCarat: function() {
@@ -113,18 +149,22 @@ var SetMarkupView = Backbone.View.extend({
     /**
      * Storing input values in form of table
      */
-    var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
-    var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
+    if (pcRangeInputValues.$pcFirstInput != ' ' && pcRangeInputValues.$pcSecondInput != ' ' && pcRangeInputValues.$pcThirdInput != ' ' && pcRangeInputValues.$pcFourthInput != ' ') {
+      var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
+      var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
 
-    var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
-    // $checkedRows.appendTo('#added-markups tbody');
+      var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
+      // $checkedRows.appendTo('#added-markups tbody');
 
-    /**
-     *  After adding a Markups to table blank input fields.
-     */
-    $('.markup-table input').val(' ');
+      /**
+       *  After adding a Markups to table blank input fields.
+       */
+      $('.markup-table input').val(' ');
 
-    return false;
+      return false;
+    } else {
+      console.log('Fill all Input Fields');
+    }
   },
 
   confirmationPOPUP: function(e) {

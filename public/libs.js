@@ -1,4 +1,4 @@
-/* Compiled file! lds-admin-markup - v6.0.0 - 2017-08-22 *//*!
+/* Compiled file! lds-admin-markup - v6.0.0 - 2017-08-29 *//*!
  * jQuery JavaScript Library v1.8.2
  * http://jquery.com/
  *

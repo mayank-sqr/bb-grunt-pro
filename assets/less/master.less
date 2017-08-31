@@ -4,7 +4,6 @@
 
 @tablet:    ~"only screen and (min-width: 768px) and (max-width: 991px)";
 @mobile:    ~"only screen and (min-width: 320px) and (max-width: 767px)";
-@ipad-landscape: ~"only screen and (min-width: 768px) and (max-width: 840px)";
 @extrasmalldevice:    ~"only screen and (min-width: 320px) and (max-width: 480px)";
 
 @font-face {
@@ -196,7 +195,7 @@ table thead{
   .add-button a,
   .remove-button a,
   #price-markup-range .add-btn a,
-  #carat-markup-range add-btn a,
+  #carat-markup-range .add-btn a,
   .save-publish-btn a{
     	background: #194d78;
 	    border-radius: 0;
@@ -276,7 +275,7 @@ table thead{
 }
 .save-publish-btn a{
       text-transform: uppercase;
-    padding: 5px 25px;
+    padding: 5px 20px;
     font-size: 12px;
 }
 
@@ -356,14 +355,6 @@ span.symbol {
 
 }
 
-@media @ipad-landscape{
-  #set-markup-add th, 
-  #set-markup-remove th, 
-  #set-markup-add td, 
-  #set-markup-remove td {
-    min-width: 100px;
-}
-}
 
 @media @mobile{
   .container{

@@ -32,20 +32,22 @@ var SetMarkupView = Backbone.View.extend({
     /**
      * Storing input values in form of table
      */
+    if (pcRangeInputValues.$pcFirstInput != ' ' && pcRangeInputValues.$pcSecondInput != ' ' && pcRangeInputValues.$pcThirdInput != ' ' && pcRangeInputValues.$pcFourthInput != ' ') {
+      var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
+      var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
 
-    var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
-    var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
+      var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
+      //$checkedRows.appendTo('tbody');
 
-    var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
-    //$checkedRows.appendTo('tbody');
+      /**
+       * After adding a Markups to table blank input fields.
+       */
+      $('.markup-table input').val(' ');
 
-    /**
-     * After adding a Markups to table blank input fields.
-     */
-    $('.markup-table tr input').val(' ');
-
-    return false;
-
+      return false;
+    } else {
+      console.log('Fill all Input Fields');
+    }
   },
 
   markupbyCarat: function() {
@@ -64,18 +66,22 @@ var SetMarkupView = Backbone.View.extend({
     /**
      * Storing input values in form of table
      */
-    var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
-    var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
+    if (pcRangeInputValues.$pcFirstInput != ' ' && pcRangeInputValues.$pcSecondInput != ' ' && pcRangeInputValues.$pcThirdInput != ' ' && pcRangeInputValues.$pcFourthInput != ' ') {
+      var pcRangeRow = Handlebars.getTemplate("pc-range-table-row");
+      var pcRangeRowOutput = pcRangeRow(pcRangeInputValues)
 
-    var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
-    // $checkedRows.appendTo('#added-markups tbody');
+      var $checkedRows = this.$el.find('#added-markups tbody').append(pcRangeRowOutput);
+      // $checkedRows.appendTo('#added-markups tbody');
 
-    /**
-     *  After adding a Markups to table blank input fields.
-     */
-    $('.markup-table input').val(' ');
+      /**
+       *  After adding a Markups to table blank input fields.
+       */
+      $('.markup-table input').val(' ');
 
-    return false;
+      return false;
+    } else {
+      console.log('Fill all Input Fields');
+    }
   },
 
   confirmationPOPUP: function(e) {
